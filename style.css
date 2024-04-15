@@ -1,0 +1,101 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    background-color: #2f343a;
+    color: #d13138;
+    padding: 1vh;
+    position: relative;
+}
+
+header h1 {
+    margin: 3vh auto;
+    text-align: center;
+    width: 100%;
+}
+
+header nav {
+    position: absolute;
+    right: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header nav a {
+    color: white;
+}
+
+table {
+    margin-top: 1vh;
+    border-collapse: collapse;
+}
+
+.home table {
+    border : 1px solid black;
+    width : 100%;
+}
+
+.home td,
+.home th {
+    height : 4vh;
+}
+
+.home td {
+    text-align: center;
+}
+
+.home th,
+.home th a {
+    background-color: #2f343a;
+    color: white;
+}
+
+.home tr:nth-child(even) {
+    background-color: #d13138;
+}
+
+.championship {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #2f343a 2px solid;
+    margin-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.championship table {
+    margin: auto;
+}
+
+.championship thead th,
+.championship tr td:last-child {
+    background-color: salmon;
+}
+
+.championship tbody th {
+    text-align: left;
+}
+
+.championship td {
+    text-align: center;
+    background-color: rgb(181, 214, 238);
+}
+
+.championship table .winner {
+    background-color: #d3e720;
+}
+
+.championship table .second {
+    background-color: #afafaf;
+}
+
+.championship table .third {
+    background-color: #cd7f32;
+}
+
+.championship table .points {
+    background-color: rgb(156, 226, 156);
+}

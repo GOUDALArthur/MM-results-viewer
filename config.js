@@ -1,0 +1,1 @@
+export const DATA_PATH = './assets/data/results.csv';
