@@ -1,11 +1,13 @@
 a {
     text-decoration: none;
+}
+
+main a {
     color: black;
 }
 
 header {
     background-color: #2f343a;
-    color: #d13138;
     padding: 1vh;
     position: relative;
 }
@@ -14,6 +16,10 @@ header h1 {
     margin: 3vh auto;
     text-align: center;
     width: 100%;
+}
+
+header a {
+    color: #d13138;
 }
 
 header nav {
