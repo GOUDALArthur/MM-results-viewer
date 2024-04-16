@@ -21,7 +21,7 @@ const router = async () => {
                     + (request.verb ? '/' + request.verb : '')
     let page = routes[parsedURL] ? new routes[parsedURL] : Error404
     
-    content.innerHTML = (await page.render()).outerHTML;
+    content.innerHTML = await page.render();
 }
 
 window.addEventListener('hashchange', router);

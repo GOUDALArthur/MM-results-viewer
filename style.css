@@ -69,11 +69,11 @@ table {
     align-items: center;
     border: #2f343a 2px solid;
     margin-top: 2vh;
-    padding-bottom: 2vh;
 }
 
 .championship table {
     margin: auto;
+    margin-bottom: 2vh;
 }
 
 .championship thead th,

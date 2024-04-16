@@ -1,21 +1,21 @@
 driver;team;position;points;time;category;gp;track;layout;session;date
-Driver One;Team One;1;25;1:18:17.250;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Two;Team Two;2;18;+3.270;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Three;Team Three;3;15;+5.154;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Four;Team Four;4;12;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Five;Team Five;5;10;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Six;Team Six;6;8;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Seven;Team Seven;7;6;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Eight;Team Eight;8;4;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Nine;Team Nine;9;2;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Ten;Team Ten;10;1;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Eleven;Team Eleven;11;0;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Twelve;Team Twelve;12;0;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Thirteen;Team Thirteen;13;0;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Fourteen;Team Fourteen;14;0;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Fifteen;Team Fifteen;15;0;+2 tours;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Sixteen;Team Sixteen;16;0;+2 tours;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Seventeen;Team Seventeen;17;0;+2 tours;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Eighteen;Team Eighteen;18;0;Crash;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Nineteen;Team Nineteen;19;0;Failure;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
-Driver Twenty;Team Twenty;20;0;DSQ;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver One;Team Three;1;25;1:18:17.250;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Two;Team Seven;2;18;+3.270;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Three;Team Two;3;15;+5.154;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Four;Team Nine;4;12;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Five;Team Three;5;10;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Six;Team One;6;8;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Seven;Team Five;7;6;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Eight;Team Ten;8;4;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Nine;Team Two;9;2;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Ten;Team Six;10;1;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Eleven;Team Five;11;0;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Twelve;Team Ten;12;0;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Thirteen;Team One;13;0;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Fourteen;Team Nine;14;0;+1 tour;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Fifteen;Team Four;15;0;+2 tours;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Sixteen;Team Eight;16;0;+2 tours;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Seventeen;Team Four;17;0;+2 tours;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Eighteen;Team Eight;18;0;Crash;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Nineteen;Team Seven;19;0;Failure;Formula One;USA;Texas;B;race;2024-09-04T14:00:00
+Driver Twenty;Team Six;20;0;DSQ;Formula One;USA;Texas;B;race;2024-09-04T14:00:00

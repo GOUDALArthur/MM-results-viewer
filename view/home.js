@@ -3,10 +3,6 @@ import ResultsProvider from "../service/results-provider.js";
 export default class Home {
 
     async render() {
-        let homeContainer = document.createElement('section');
-        homeContainer.classList.add('home');
-        
-        console.log("Home : ", ResultsProvider.data);
         const seasons = ResultsProvider.getYears();
         const categories = ResultsProvider.getCategories();
         const table = document.createElement('table');
@@ -33,8 +29,9 @@ export default class Home {
             tbody.appendChild(row);
         }
 
-        homeContainer.appendChild(table);
-        return homeContainer;
+        return `<section class="home">
+            ${table.outerHTML}
+        </section>`;
     }
 
 }

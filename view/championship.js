@@ -11,50 +11,72 @@ export default class Championship {
         const seasonCategory = category || request.id_cat.replace(/%20/g, ' ');
         const season = ResultsProvider.getSeason(seasonYear, seasonCategory);
         console.log('Season: ', season);
+        let header = ``;
 
-        let seasonContainer = document.createElement('section');
-        seasonContainer.classList.add('championship');
-        seasonContainer.innerHTML = `
-            <h1>${seasonYear} ${seasonCategory} Championship</h1>
-        `;
-
-        const table = document.createElement('table');
-        const header = document.createElement('tr');
-        header.innerHTML = `<th>Drivers</th>`;
         const sortedRaces = Object.values(season.races).sort((a, b) => new Date(a.date) - new Date(b.date));
         sortedRaces.forEach(race => {
-            header.innerHTML += `<th>${race.gp}</th>`;
+            header += `<th>${race.gp}</th>`;
             Object.values(race.getRaceResults()).forEach(raceResult => {
                 viewModel.getResult(raceResult.driver) || viewModel.addParticipant(raceResult.driver);
                 viewModel.addPoints(raceResult.driver, raceResult.points);
-
                 const className = raceResult.position === '1' ? 'winner' :
                                   raceResult.position === '2' ? 'second' :
                                   raceResult.position === '3' ? 'third' :
                                   raceResult.time === 'Crash' || raceResult.time === 'Failure' ? 'dnf' :
-                                  raceResult.points > 0 ? 'points' :
-                                  raceResult.time === 'DSQ' ? 'dsq' : '';
+                                  raceResult.time === 'DSQ' ? 'dsq' :
+                                  raceResult.points > 0 ? 'points' : '';
                 const resultRender = /\d/.test(raceResult.time) ? raceResult.position : raceResult.time.substring(0, 3);
-                const render = `<td class="${className}">${resultRender}</td>`;
-                viewModel.addRender(raceResult.driver, render);
+                viewModel.addRender(raceResult.driver, `<td class="${className}">${resultRender}</td>`);
+
+                viewModel.getResult(raceResult.team) || viewModel.addParticipant(raceResult.team);
+                const driverTeam = race.getRaceResult(raceResult.driver).team;
+                const teamMate = Object.entries(race.getRaceResults()).find(([_, result]) => result.team === driverTeam && result.position != raceResult.position)[1];
+                if (parseInt(raceResult.position) < parseInt(teamMate.position)) {
+                    const points = parseInt(raceResult.points) + parseInt(teamMate.points);
+                    viewModel.addPoints(raceResult.team, points);
+                    const render = points > 0 ? points : '-';
+                    viewModel.addRender(raceResult.team, `<td class="${className}">${render}</td>`);
+                }
             });
         });
-        header.innerHTML += `<th>Pts</th>`;
-        table.appendChild(document.createElement('thead')).appendChild(header);
+        header += `<th>Pts</th>`;
+
+        const driversTable = document.createElement('table');
+        driversTable.innerHTML = `<thead><th>Drivers</th>${header}</thead>`;
+        const driversBody = document.createElement('tbody');
+        driversTable.appendChild(driversBody);
+        const teamsTable = document.createElement('table');
+        teamsTable.innerHTML = `<thead><th>Teams</th>${header}</thead>`;
+        const teamsBody = document.createElement('tbody');
+        teamsTable.appendChild(teamsBody);
+
         viewModel.getResults().sort((a, b) => b.points - a.points).forEach(participant => {
-            const participantTeam = season.races[sortedRaces[0].date].getRaceResult(participant.participant).team;
-            console.log(participantTeam)
-            participant.insertTeam(participantTeam);
-            table.innerHTML += `
-                <tr>
-                    ${participant.render}
-                    <td>${participant.points}</td>
-                </tr>
-            `;
+            const result = season.races[sortedRaces[0].date].getRaceResult(participant.participant);
+            if (result) { // If participant is a driver
+                participant.insertTeam(result.team);
+                driversBody.innerHTML += `
+                    <tr>
+                      ${participant.render}
+                      <td>${participant.points}</td>
+                    </tr>
+                `;
+            } else { // If participant is a team
+                participant.insertTeam(participant.participant);
+                teamsBody.innerHTML += `
+                    <tr>
+                      ${participant.render}
+                      <td>${participant.points}</td>
+                    </tr>
+                `;
+            }
         });
-        console.log(table.innerHTML);
-        seasonContainer.appendChild(table);
-        return seasonContainer;
+
+        // console.log(driversTable.innerHTML);
+        return `<section class="championship">
+          <h2>${seasonYear} <a href="#/categories/${seasonCategory}">${seasonCategory}</a> Championship</h2>
+          ${driversTable.outerHTML}
+          ${teamsTable.outerHTML}
+        </section>`;
     }
 
 }
