@@ -2,9 +2,11 @@ import ResultsProvider from './service/results-provider.js';
 import utils from './service/utils.js';
 import Home from './view/home.js';
 import Championship from './view/championship.js';
+import Category from './view/category.js';
 
 const routes = {
     '/': Home,
+    '/categories/:id_cat': Category,
     '/categories/:id_cat/:id' : Championship,
 };
 

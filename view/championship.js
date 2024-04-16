@@ -4,16 +4,18 @@ import ChampionshipResultViewModel from "../view-model/championship.js";
 
 export default class Championship {
 
-    async render() {
+    async render(year = null, category = null) {
         const request = utils.parseRequestURL();
         const viewModel = new ChampionshipResultViewModel();
-        const season = ResultsProvider.getSeason(request.id, request.id_cat.replace(/%20/g, ' '));
+        const seasonYear = year || request.id;
+        const seasonCategory = category || request.id_cat.replace(/%20/g, ' ');
+        const season = ResultsProvider.getSeason(seasonYear, seasonCategory);
         console.log('Season: ', season);
 
         let seasonContainer = document.createElement('section');
         seasonContainer.classList.add('championship');
         seasonContainer.innerHTML = `
-            <h1>${request.id} ${season.category} Championship</h1>
+            <h1>${seasonYear} ${seasonCategory} Championship</h1>
         `;
 
         const table = document.createElement('table');
