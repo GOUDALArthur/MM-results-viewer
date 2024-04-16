@@ -105,3 +105,12 @@ table {
 .championship table .points {
     background-color: rgb(156, 226, 156);
 }
+
+.championship table .dnf {
+    background-color: #d13138;
+}
+
+.championship table .dsq {
+    background-color: #2f343a;
+    color : #eeeeee;
+}

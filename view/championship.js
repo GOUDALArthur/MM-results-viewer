@@ -34,7 +34,8 @@ export default class Championship {
                                   raceResult.time === 'Crash' || raceResult.time === 'Failure' ? 'dnf' :
                                   raceResult.points > 0 ? 'points' :
                                   raceResult.time === 'DSQ' ? 'dsq' : '';
-                const render = `<td class="${className}">${raceResult.position}</td>`;
+                const resultRender = /\d/.test(raceResult.time) ? raceResult.position : raceResult.time.substring(0, 3);
+                const render = `<td class="${className}">${resultRender}</td>`;
                 viewModel.addRender(raceResult.driver, render);
             });
         });
