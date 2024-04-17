@@ -8,9 +8,7 @@ export default class ChampionshipResult {
 
     insertTeam(team) {
         team = team.toLowerCase().replace(' ', '-');
-        console.log('Before replace:', this.render);
         this.render = this.render.replace(`"row">`, `"row" class="${team}">`);
-        console.log('After replace:', this.render);
     }
 
 }

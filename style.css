@@ -114,3 +114,11 @@ table {
     background-color: #2f343a;
     color : #eeeeee;
 }
+
+.championship table .pole {
+    font-weight: bold;
+}
+
+.championship table .fl {
+    font-style: italic;
+}

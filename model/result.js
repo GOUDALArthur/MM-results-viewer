@@ -1,11 +1,12 @@
 export default class Result {
 
-    constructor(position, driver, team, points, time) {
+    constructor(position, driver, team, points, details) {
         this.position = position;
         this.driver = driver;
         this.team = team;
         this.points = points;
-        this.time = time;
+        if (typeof details === 'string') details = details.replace(/\s/g, "").split(',');
+        this.details = details;
     }
 
 }

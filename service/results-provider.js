@@ -24,7 +24,7 @@ export default class ResultsProvider {
                                 season.addRace(row.gp, row.date, row.track, row.layout);
                             }
                             const race = season.races[row.date];
-                            race.addResult(row.position, row.driver, row.team, row.points, row.time, row.session);
+                            race.addResult(row.position, row.driver, row.team, row.points, row.details);
                         },
                         complete: function() {
                             resolve();
@@ -36,7 +36,6 @@ export default class ResultsProvider {
                     console.log("ResultsProvider : ", ResultsProvider.data);
                 })
                 .catch(error => {
-                    console.error('Error:', error)
                     reject(error)
                 });
         });

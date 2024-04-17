@@ -16,25 +16,29 @@ export default class Championship {
         const sortedRaces = Object.values(season.races).sort((a, b) => new Date(a.date) - new Date(b.date));
         sortedRaces.forEach(race => {
             header += `<th>${race.gp}</th>`;
-            Object.values(race.getRaceResults()).forEach(raceResult => {
+            Object.values(race.getResults()).forEach(raceResult => {
                 viewModel.getResult(raceResult.driver) || viewModel.addParticipant(raceResult.driver);
                 viewModel.addPoints(raceResult.driver, raceResult.points);
-                const className = raceResult.position === '1' ? 'winner' :
+                let className = raceResult.position === '1' ? 'winner' :
                                   raceResult.position === '2' ? 'second' :
                                   raceResult.position === '3' ? 'third' :
-                                  raceResult.time === 'Crash' || raceResult.time === 'Failure' ? 'dnf' :
-                                  raceResult.time === 'DSQ' ? 'dsq' :
+                                  raceResult.details.includes('Crash')  || raceResult.details.includes('Failure') ? 'dnf' :
+                                  raceResult.details.includes('DSQ') ? 'dsq' :
                                   raceResult.points > 0 ? 'points' : '';
-                const resultRender = /\d/.test(raceResult.time) ? raceResult.position : raceResult.time.substring(0, 3);
+                if (raceResult.details.includes('P')) className += ' pole';
+                if (raceResult.details.includes('FL')) className += ' fl';
+                const resultRender = ['Crash', 'Failure', 'DSQ'].some(val => raceResult.details.includes(val)) ? raceResult.details[0].substring(0, 3) : raceResult.position;
                 viewModel.addRender(raceResult.driver, `<td class="${className}">${resultRender}</td>`);
 
                 viewModel.getResult(raceResult.team) || viewModel.addParticipant(raceResult.team);
-                const driverTeam = race.getRaceResult(raceResult.driver).team;
-                const teamMate = Object.entries(race.getRaceResults()).find(([_, result]) => result.team === driverTeam && result.position != raceResult.position)[1];
+                const driverTeam = race.getResult(raceResult.driver).team;
+                const teamMate = Object.entries(race.getResults()).find(([_, result]) => result.team === driverTeam && result.position != raceResult.position)[1];
                 if (parseInt(raceResult.position) < parseInt(teamMate.position)) {
                     const points = parseInt(raceResult.points) + parseInt(teamMate.points);
                     viewModel.addPoints(raceResult.team, points);
                     const render = points > 0 ? points : '-';
+                    if (teamMate.details.includes('P')) className += ' pole';
+                    if (teamMate.details.includes('FL')) className += ' fl';
                     viewModel.addRender(raceResult.team, `<td class="${className}">${render}</td>`);
                 }
             });
@@ -51,7 +55,7 @@ export default class Championship {
         teamsTable.appendChild(teamsBody);
 
         viewModel.getResults().sort((a, b) => b.points - a.points).forEach(participant => {
-            const result = season.races[sortedRaces[0].date].getRaceResult(participant.participant);
+            const result = season.races[sortedRaces[0].date].getResult(participant.participant);
             if (result) { // If participant is a driver
                 participant.insertTeam(result.team);
                 driversBody.innerHTML += `
