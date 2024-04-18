@@ -115,10 +115,19 @@ table {
     color : #eeeeee;
 }
 
+.championship table .dns {
+    background-color: #dadada;
+}
+
 .championship table .pole {
     font-weight: bold;
 }
 
-.championship table .fl {
+.championship table .fl,
+.championship table .rookie {
     font-style: italic;
+}
+
+.championship table .champion {
+    text-decoration: underline;
 }

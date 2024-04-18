@@ -9,4 +9,8 @@ export default class Result {
         this.details = details;
     }
 
+    isATeam() {
+        return this.driver === this.team;
+    }
+
 }

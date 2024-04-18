@@ -12,6 +12,7 @@ export default class ResultsProvider {
                 .then(csv => {
                     Papa.parse(csv, {
                         header: true,
+                        skipEmptyLines: true,
                         step: function(result) {
                             const row = result.data;
                             const year = row.date.substring(0, 4);

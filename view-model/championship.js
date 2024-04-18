@@ -1,9 +1,9 @@
-import ChampionshipResult from '../model/championship.js';
+import Championship from '../model/championship.js';
 
 export default class ChampionshipViewModel {
 
     constructor() {
-        this.championship = new ChampionshipResult();
+        this.championship = new Championship();
     }
 
     getResults() {
@@ -24,6 +24,14 @@ export default class ChampionshipViewModel {
 
     addRender(name, render) {
         this.championship.addRender(name, render);
+    }
+
+    insertTeam(name, team) {
+        this.championship.insertTeam(name, team);
+    }
+
+    isDriver(name) {
+        return this.championship.isDriver(name);
     }
 
 }

@@ -4,11 +4,7 @@ export default class ChampionshipResult {
         this.participant = participant;
         this.render = `<th scope="row">${participant}</th>`;
         this.points = 0;
-    }
-
-    insertTeam(team) {
-        team = team.toLowerCase().replace(' ', '-');
-        this.render = this.render.replace(`"row">`, `"row" class="${team}">`);
+        this.type = null;
     }
 
 }

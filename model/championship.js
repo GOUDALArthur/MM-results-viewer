@@ -7,7 +7,7 @@ export default class Championship {
     }
 
     getResult(participant) {
-        return this.results.find(result => result.participant === participant);
+        return this.results.find(result => result.participant === participant) || null;
     }
 
     addParticipant(participant) {
@@ -23,6 +23,22 @@ export default class Championship {
     addRender(name, render) {
         const result = this.getResult(name);
         result.render += render;
+    }
+
+    insertTeam(name, team) {
+        console.log('Inserting team: ', name, team);
+        team = team.toLowerCase().replace(' ', '-');
+        const result = this.getResult(name);
+        result.render = result.render.replace(`"row">`, `"row" class="${team}">`);
+        if (team === result.participant) {
+            result.type = 'team';
+        } else {
+            result.type = 'driver';
+        }
+    }
+
+    isDriver(name) {
+        return this.getResult(name).type === 'driver';
     }
 
 }
