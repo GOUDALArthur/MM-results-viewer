@@ -1,4 +1,59 @@
-.championship .team-one {
-    background-color: #d13138;
-    color: rgb(218, 214, 23);
+.championship .chariot-motor-group {
+    background-color: #3f9352;
+    color: #f0f0f0;
+}
+
+.championship .crs-formula-racing-group {
+    background-color: #9d0060;
+    color: #ffbc9a;
+}
+
+.championship .fong-motorsport {
+    background-color: #1f5daa;
+    color: #ffff51;
+}
+
+.championship .kitano-sport {
+    background-color: #c6c7c6;
+    color: #ce1b21;
+}
+
+.championship .panther-race-team {
+    background-color: #89598c;
+    color: #140908;
+}
+
+.championship .rezzato-corsa {
+    background-color: #dc334a;
+    color: #162d48;
+}
+
+.championship .scuderia-rossini {
+    background-color: #ff342a;
+    color: #211514;
+}
+
+.championship .steinmann-motorsport {
+    background-color: #eeeff0;
+    color: #089e8c;
+}
+
+.championship .thornton-motorsport {
+    background-color: #2d7035;
+    color: #cead5d;
+}
+
+.championship .van-dort-racing {
+    background-color: #ffad05;
+    color: #ffffd9;
+}
+
+.championship .vélan-racing {
+    background-color: #c6648c;
+    color: #bcbdc5;
+}
+
+.championship .windsor-racing {
+    background-color: #fafafa;
+    color: #111b1f;
 }

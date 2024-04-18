@@ -26,8 +26,7 @@ export default class Championship {
     }
 
     insertTeam(name, team) {
-        console.log('Inserting team: ', name, team);
-        team = team.toLowerCase().replace(' ', '-');
+        team = team.toLowerCase().replace(/ /g, '-');
         const result = this.getResult(name);
         result.render = result.render.replace(`"row">`, `"row" class="${team}">`);
         if (team === result.participant) {
