@@ -23,21 +23,44 @@ export default class Championship {
     addRender(name, render) {
         const result = this.getResult(name);
         result.render += render;
+        // if (render.substring(0,4) === '<tr>') {
+        //     let rowspan = parseInt(result.render.match(/rowspan="(\d+)"/)[1]);
+        //     rowspan++;
+        //     result.render = result.render.replace(/rowspan="\d+"/, `rowspan="${rowspan}"`);
+        // }
     }
 
     insertTeam(name, team) {
-        team = team.toLowerCase().replace(/ /g, '-');
         const result = this.getResult(name);
-        result.render = result.render.replace(`"row">`, `"row" class="${team}">`);
-        if (team === result.participant) {
-            result.type = 'team';
-        } else {
-            result.type = 'driver';
-        }
+        result.team = team;
+        team = team.toLowerCase().replace(/ /g, '-');
+        result.render = result.render.replace(`"row"`, `"row" class="${team}"`);
     }
 
     isDriver(name) {
-        return this.getResult(name).type === 'driver';
+        return this.getResult(name).team !== name;
+    }
+
+    isTeam(name) {
+        return this.getResult(name).team === name;
+    }
+
+    sortResults() {
+        this.results.sort((a, b) => {
+            if (this.isDriver(a.participant) && this.isTeam(b.participant)) return -1;
+            if (this.isTeam(a.participant) && this.isDriver(b.participant)) return 1;
+            if (a.points === b.points) {
+                const aRes = a.render.match(/\d+/g).slice(1);
+                const bRes = b.render.match(/\d+/g).slice(1);
+                aRes.sort((a, b) => a - b);
+                bRes.sort((a, b) => a - b);
+                for (let i = 0; i < aRes.length; i++) {
+                    if (aRes[i] === bRes[i]) continue;
+                    return aRes[i] - bRes[i];
+                }
+            }
+            return b.points - a.points;
+        })
     }
 
 }

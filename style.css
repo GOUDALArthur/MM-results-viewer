@@ -63,12 +63,19 @@ table {
 }
 
 .championship {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border: #2f343a 2px solid;
     margin-top: 2vh;
+}
+
+.championship h2 {
+    text-align: center;
+}
+
+.championship .tables {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .championship table {
@@ -76,13 +83,17 @@ table {
     margin-bottom: 2vh;
 }
 
-.championship thead th,
-.championship tr td:last-child {
+.championship thead,
+.championship table .total {
     background-color: salmon;
 }
 
 .championship tbody th {
     text-align: left;
+}
+
+.championship table tr {
+    border: #596169 0.5px solid;
 }
 
 .championship td {
@@ -95,7 +106,7 @@ table {
 }
 
 .championship table .second {
-    background-color: #afafaf;
+    background-color: #c0c0c0;
 }
 
 .championship table .third {

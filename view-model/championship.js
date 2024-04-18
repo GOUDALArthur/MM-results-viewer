@@ -34,4 +34,12 @@ export default class ChampionshipViewModel {
         return this.championship.isDriver(name);
     }
 
+    isTeam(name) {
+        return this.championship.isTeam(name);
+    }
+
+    sortResults() {
+        this.championship.sortResults();
+    }
+
 }

@@ -22,7 +22,10 @@ export default class Championship {
                     viewModel.addParticipant(raceResult.driver);
                     viewModel.insertTeam(raceResult.driver, raceResult.team);
                 }
-                viewModel.getResult(raceResult.team) || viewModel.addParticipant(raceResult.team);
+                if (viewModel.getResult(raceResult.team) === null) {
+                    viewModel.addParticipant(raceResult.team);
+                    viewModel.insertTeam(raceResult.team, raceResult.team);
+                }
 
                 const index = sortedRaces.indexOf(race);
                 if (index > 0) {
@@ -47,31 +50,24 @@ export default class Championship {
                 const resultRender = ['Crash', 'Failure', 'DSQ'].some(val => raceResult.details.includes(val)) ? raceResult.details[0].substring(0, 3) : raceResult.position;
                 viewModel.addRender(raceResult.driver, `<td class="${className}">${resultRender}</td>`);
 
-                const driverTeam = race.getResult(raceResult.driver).team;
-                const teamMate = Object.entries(race.getResults()).find(([_, result]) => result.team === driverTeam && result.position != raceResult.position)[1];
-                if (parseInt(raceResult.position) < parseInt(teamMate.position)) {
-                    const points = parseInt(raceResult.points) + parseInt(teamMate.points);
-                    viewModel.addPoints(raceResult.team, points);
-                    const render = points > 0 ? points : '-';
-                    if (teamMate.details.includes('P')) className += ' pole';
-                    if (teamMate.details.includes('FL')) className += ' fl';
-                    viewModel.addRender(raceResult.team, `<td class="${className}">${render}</td>`);
-                }
-
             });
         });
         header += `<th>Pts</th>`;
 
         const driversTable = document.createElement('table');
+        driversTable.classList.add('drivers-table');
         driversTable.innerHTML = `<thead><th>Drivers</th>${header}</thead>`;
         const driversBody = document.createElement('tbody');
         driversTable.appendChild(driversBody);
+        
         const teamsTable = document.createElement('table');
+        teamsTable.classList.add('teams-table');
         teamsTable.innerHTML = `<thead><th>Teams</th>${header}</thead>`;
         const teamsBody = document.createElement('tbody');
         teamsTable.appendChild(teamsBody);
 
-        viewModel.getResults().sort((a, b) => b.points - a.points).forEach(participant => {
+        viewModel.sortResults();
+        viewModel.getResults().forEach(participant => {
             if (viewModel.isDriver(participant.participant)) { // If participant is a driver
                 while (participant.render.split('</td>').length - 1 < sortedRaces.length) {
                     viewModel.addRender(participant.participant, `<td class="dns"></td>`);
@@ -79,25 +75,33 @@ export default class Championship {
                 driversBody.innerHTML += `
                     <tr>
                       ${participant.render}
-                      <td>${participant.points}</td>
+                      <td class="total">${participant.points}</td>
                     </tr>
                 `;
-            } else { // If participant is a team
-                viewModel.insertTeam(participant.participant, participant.participant);
+
+                const renderForTeam = participant.render.replace(/<th scope="row".*<\/th>/, '');
+                viewModel.addRender(participant.team, `<tr> ${renderForTeam} </tr>`);
+                viewModel.addPoints(participant.team, participant.points);
+            } 
+        });
+        viewModel.sortResults();
+        viewModel.getResults().forEach(participant => {
+            if (viewModel.isTeam(participant.participant)) { // If participant is a team
+                const teamRowCount = participant.render.split('</tr>').length - 1;
+                const teamRenderWithRowspan = participant.render.replace(/<th scope="row"/, `<th scope="row" rowspan="${teamRowCount + 1}"`);
+                const teamRenderWithPoints = teamRenderWithRowspan.replace(/<\/tr>/, `<td rowspan="${teamRowCount}" class="total">${participant.points}</td></tr>`);
                 teamsBody.innerHTML += `
-                    <tr>
-                      ${participant.render}
-                      <td>${participant.points}</td>
-                    </tr>
+                    ${teamRenderWithPoints}
                 `;
             }
         });
 
-        // console.log(driversTable.innerHTML);
         return `<section class="championship">
           <h2>${seasonYear} <a href="#/categories/${seasonCategory}">${seasonCategory}</a> Championship</h2>
-          ${driversTable.outerHTML}
-          ${teamsTable.outerHTML}
+          <div class="tables">
+            ${driversTable.outerHTML}
+            ${teamsTable.outerHTML}
+          </div>
         </section>`;
     }
 
