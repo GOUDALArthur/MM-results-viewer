@@ -49,7 +49,7 @@ export default class ResultsProvider {
     static getYears() {
         let res = [];
         Object.values(ResultsProvider.data).forEach(season => {
-            res.push(season.year);
+            if (!res.includes(season.year)) res.push(season.year);
         });
         return res;
     }
