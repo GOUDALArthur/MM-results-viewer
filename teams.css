@@ -1,3 +1,13 @@
+.championship .agostino-corsa {
+    background-color: #9f9fa1;
+    color: #715c14;
+}
+
+.championship .archer-bmr {
+    background-color: #252a33;
+    color: #ebc340;
+}
+
 .championship .boa-esperança {
     background-color: #e09515;
     color: #ac3229;
@@ -13,6 +23,16 @@
     color: #ffbc9a;
 }
 
+.championship .dragon-race-team-china {
+    background-color: #db223f;
+    color: #110d13;
+}
+
+.championship .eastwood-motorsport {
+    background-color: #a5b263;
+    color: #3f8958;
+}
+
 .championship .empress-autosport {
     background-color: #d17ab6;
     color: #cca612;
@@ -23,9 +43,19 @@
     color: #87d2bf;
 }
 
+.championship .firebird-mrt {
+    background-color: #1f9094;
+    color: #262532;
+}
+
 .championship .fong-motorsport {
     background-color: #1f5daa;
     color: #ffff51;
+}
+
+.championship .garuda-racing {
+    background-color: #e86f32;
+    color: #737373;
 }
 
 .championship .kitano-sport {
@@ -53,6 +83,11 @@
     color: #160a0b;
 }
 
+.championship .octane-racing {
+    background-color: #b5aa39;
+    color: #272a31;
+}
+
 .championship .ozu-motor-team {
     background-color: #f62723;
     color: #eeeeee;
@@ -61,6 +96,11 @@
 .championship .panther-race-team {
     background-color: #89598c;
     color: #140908;
+}
+
+.championship .predator-racing-group {
+    background-color: #ec485c;
+    color: #fcfcfc;
 }
 
 .championship .rezzato-corsa {
@@ -81,6 +121,11 @@
 .championship .scuderia-rossini {
     background-color: #ff342a;
     color: #211514;
+}
+
+.championship .silva-racing {
+    background-color: #46aa6f;
+    color: #fcfcfc;
 }
 
 .championship .steinmann-motorsport {
@@ -108,12 +153,27 @@
     color: #bcbdc5;
 }
 
+.championship .vexala-motorsport {
+    background-color: #7f5070;
+    color: #11121b;
+}
+
 .championship .windsor-racing {
     background-color: #fafafa;
     color: #111b1f;
 }
 
+.championship .wirleich-bonniel-team {
+    background-color: #fafafa;
+    color: #b40000;
+}
+
 .championship .zampelli-engineering {
     background-color: #194174;
     color: #f8f8f8;
+}
+
+.championship .zrt-autosport {
+    background-color: #347bac;
+    color: #fafafa;
 }
