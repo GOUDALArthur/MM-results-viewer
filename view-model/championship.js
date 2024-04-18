@@ -26,8 +26,8 @@ export default class ChampionshipViewModel {
         this.championship.addRender(name, render);
     }
 
-    insertTeam(name, team) {
-        this.championship.insertTeam(name, team);
+    insertClass(name, team, details = null) {
+        this.championship.insertClass(name, team, details);
     }
 
     isDriver(name) {

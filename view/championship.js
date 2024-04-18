@@ -20,11 +20,11 @@ export default class Championship {
                 
                 if (viewModel.getResult(raceResult.driver) === null) {
                     viewModel.addParticipant(raceResult.driver);
-                    viewModel.insertTeam(raceResult.driver, raceResult.team);
+                    viewModel.insertClass(raceResult.driver, raceResult.team, raceResult.details);
                 }
                 if (viewModel.getResult(raceResult.team) === null) {
                     viewModel.addParticipant(raceResult.team);
-                    viewModel.insertTeam(raceResult.team, raceResult.team);
+                    viewModel.insertClass(raceResult.team, raceResult.team);
                 }
 
                 const index = sortedRaces.indexOf(race);

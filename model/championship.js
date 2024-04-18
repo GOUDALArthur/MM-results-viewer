@@ -23,18 +23,16 @@ export default class Championship {
     addRender(name, render) {
         const result = this.getResult(name);
         result.render += render;
-        // if (render.substring(0,4) === '<tr>') {
-        //     let rowspan = parseInt(result.render.match(/rowspan="(\d+)"/)[1]);
-        //     rowspan++;
-        //     result.render = result.render.replace(/rowspan="\d+"/, `rowspan="${rowspan}"`);
-        // }
     }
 
-    insertTeam(name, team) {
+    insertClass(name, team, details = null) {
         const result = this.getResult(name);
         result.team = team;
-        team = team.toLowerCase().replace(/ /g, '-');
-        result.render = result.render.replace(`"row"`, `"row" class="${team}"`);
+        let renderClass = team.toLowerCase().replace(/ /g, '-');
+        if (details && details.includes('R')) renderClass += ' rookie';
+        if (details && details.includes('C')) renderClass += ' champion';
+        if (details && details.includes('T')) renderClass += ' title-holder';
+        result.render = result.render.replace(`"row"`, `"row" class="${renderClass}"`);
     }
 
     isDriver(name) {

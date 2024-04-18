@@ -142,3 +142,7 @@ table {
 .championship table .champion {
     text-decoration: underline;
 }
+
+.championship table .title-holder {
+    text-decoration: underline double;
+}
