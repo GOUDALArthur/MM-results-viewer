@@ -1,3 +1,8 @@
+.championship .boa-esperança {
+    background-color: #e09515;
+    color: #ac3229;
+}
+
 .championship .chariot-motor-group {
     background-color: #3f9352;
     color: #f0f0f0;
@@ -6,6 +11,16 @@
 .championship .crs-formula-racing-group {
     background-color: #9d0060;
     color: #ffbc9a;
+}
+
+.championship .empress-autosport {
+    background-color: #d17ab6;
+    color: #cca612;
+}
+
+.championship .espirit-gp {
+    background-color: #9151a9;
+    color: #87d2bf;
 }
 
 .championship .fong-motorsport {
@@ -18,6 +33,31 @@
     color: #ce1b21;
 }
 
+.championship .krüger-motorsport {
+    background-color: #898889;
+    color: #2fbd7f;
+}
+
+.championship .lucatelli-racing {
+    background-color: #262a31;
+    color: #a47a2d;
+}
+
+.championship .macneil-racing-team {
+    background-color: #f1f1f2;
+    color: #336b8a;
+}
+
+.championship .mrt-valbuena {
+    background-color: #ffff0c;
+    color: #160a0b;
+}
+
+.championship .ozu-motor-team {
+    background-color: #f62723;
+    color: #eeeeee;
+}
+
 .championship .panther-race-team {
     background-color: #89598c;
     color: #140908;
@@ -28,6 +68,16 @@
     color: #162d48;
 }
 
+.championship .rogendaal-gt-team {
+    background-color: #f09714;
+    color: #1f1f1f;
+}
+
+.championship .ruiz-motorsport {
+    background-color: #4296aa;
+    color: #bb5114;
+}
+
 .championship .scuderia-rossini {
     background-color: #ff342a;
     color: #211514;
@@ -36,6 +86,11 @@
 .championship .steinmann-motorsport {
     background-color: #eeeff0;
     color: #089e8c;
+}
+
+.championship .team-kirov {
+    background-color: #61b3cd;
+    color: #c71a34;
 }
 
 .championship .thornton-motorsport {
@@ -56,4 +111,9 @@
 .championship .windsor-racing {
     background-color: #fafafa;
     color: #111b1f;
+}
+
+.championship .zampelli-engineering {
+    background-color: #194174;
+    color: #f8f8f8;
 }
