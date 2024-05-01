@@ -58,6 +58,11 @@
     color: #737373;
 }
 
+.championship .johnson-racing-team {
+    background-color: #c4c4c4;
+    color: #156485;
+}
+
 .championship .kitano-sport {
     background-color: #c6c7c6;
     color: #ce1b21;
@@ -68,6 +73,11 @@
     color: #2fbd7f;
 }
 
+.championship .lagro-banco-motorsport {
+    background-color: #f9db13;
+    color: #007dbf;
+}
+
 .championship .lucatelli-racing {
     background-color: #262a31;
     color: #a47a2d;
@@ -76,6 +86,16 @@
 .championship .macneil-racing-team {
     background-color: #f1f1f2;
     color: #336b8a;
+}
+
+.championship .makoma-racing-team {
+    background-color: #443705;
+    color: #816909;
+}
+
+.championship .motor-works-performance {
+    background-color: #078d8c;
+    color: #f1dd73;
 }
 
 .championship .mrt-valbuena {
@@ -118,6 +138,11 @@
     color: #bb5114;
 }
 
+.championship .scuderia-pergusa {
+    background-color: #ead369;
+    color: #f68a65;
+}
+
 .championship .scuderia-rossini {
     background-color: #ff342a;
     color: #211514;
@@ -126,6 +151,11 @@
 .championship .silva-racing {
     background-color: #46aa6f;
     color: #fcfcfc;
+}
+
+.championship .steel-angel-autosport {
+    background-color: #ec489d;
+    color: #0ca8e8;
 }
 
 .championship .steinmann-motorsport {
