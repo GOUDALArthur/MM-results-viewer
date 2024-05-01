@@ -5,12 +5,12 @@ const utils = {
         let r = url.split("/")
         let request = {
             resource : null,
-            id_cat : null,
+            main_id : null,
             id : null,
             verb : null
         }
         request.resource = r[1]
-        request.id_cat = r[2]
+        request.main_id = r[2]
         request.id = r[3]
         request.verb = r[4]
 

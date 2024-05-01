@@ -2,19 +2,18 @@ import ResultsProvider from "../service/results-provider.js";
 import utils from "../service/utils.js";
 import Championship from "./championship.js";
 
-export default class Category {
+export default class Season {
     
     async render() {
         const request = utils.parseRequestURL();
-        const category = request.main_id.replace(/%20/g, ' ');
         let render = ``;
 
-        const years = ResultsProvider.getYears();
-        for (const year of years) {
-            const season = await ResultsProvider.getSeason(year, category);
+        const categories = ResultsProvider.getCategories();
+        for (const cat of categories) {
+            const season = await ResultsProvider.getSeason(request.main_id, cat);
             if (season) {
                 const championship = new Championship();
-                render += await championship.render(year, category);
+                render += await championship.render(request.main_id, cat);
             }
         }
 

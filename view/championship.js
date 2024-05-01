@@ -8,7 +8,7 @@ export default class Championship {
         const request = utils.parseRequestURL();
         const viewModel = new ChampionshipResultViewModel();
         const seasonYear = year || request.id;
-        const seasonCategory = category || request.id_cat.replace(/%20/g, ' ');
+        const seasonCategory = category || request.main_id.replace(/%20/g, ' ');
         const season = ResultsProvider.getSeason(seasonYear, seasonCategory);
         console.log('Season: ', season);
         let header = ``;
@@ -97,7 +97,7 @@ export default class Championship {
         });
 
         return `<section class="championship">
-          <h2>${seasonYear} <a href="#/categories/${seasonCategory}">${seasonCategory}</a> Championship</h2>
+          <h2> <a href="#/seasons/${seasonYear}">${seasonYear}</a> <a href="#/categories/${seasonCategory}">${seasonCategory}</a> Championship</h2>
           <div class="tables">
             ${driversTable.outerHTML}
             ${teamsTable.outerHTML}
