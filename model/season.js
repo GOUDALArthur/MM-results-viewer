@@ -20,7 +20,7 @@ export default class Season {
     }
 
     isEndurance() {
-        return this.series === 'WEC';
+        return this.series.includes('WEC');
     }
 
 }
