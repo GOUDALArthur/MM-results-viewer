@@ -4,13 +4,12 @@ import ChampionshipResultViewModel from "../view-model/championship.js";
 
 export default class Championship {
 
-    async render(year = null, category = null) {
+    async render(year = null, series = null) {
         const request = utils.parseRequestURL();
         const viewModel = new ChampionshipResultViewModel();
         const seasonYear = year || request.id;
-        const seasonCategory = category || request.main_id.replace(/%20/g, ' ');
-        const season = ResultsProvider.getSeason(seasonYear, seasonCategory);
-        console.log('Season: ', season);
+        const seasonSeries = series || request.main_id.replace(/%20/g, ' ');
+        const season = ResultsProvider.getSeason(seasonYear, seasonSeries);
         let header = ``;
 
         const sortedRaces = Object.values(season.races).sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -81,9 +80,20 @@ export default class Championship {
 
                 const renderForTeam = participant.render.replace(/<th scope="row".*<\/th>/, '');
                 viewModel.addRender(participant.team, `<tr> ${renderForTeam} </tr>`);
-                viewModel.addPoints(participant.team, participant.points);
+                if (!season.isEndurance()) {
+                    viewModel.addPoints(participant.team, participant.points);
+                }
             } 
         });
+
+        if (season.isEndurance()) { // Must pass through this loop to update information before sorting
+            viewModel.getResults().forEach(participant => {
+                if (viewModel.isTeam(participant.participant)) { // If participant is a team
+                    viewModel.convertRenderToEndurance(participant.participant);
+                }
+            });
+        }
+
         viewModel.sortResults();
         viewModel.getResults().forEach(participant => {
             if (viewModel.isTeam(participant.participant)) { // If participant is a team
@@ -97,7 +107,7 @@ export default class Championship {
         });
 
         return `<section class="championship">
-          <h2> <a href="#/seasons/${seasonYear}">${seasonYear}</a> <a href="#/categories/${seasonCategory}">${seasonCategory}</a> Championship</h2>
+          <h2> <a href="#/seasons/${seasonYear}">${seasonYear}</a> <a href="#/categories/${seasonSeries}">${seasonSeries}</a> Championship</h2>
           <div class="tables">
             ${driversTable.outerHTML}
             ${teamsTable.outerHTML}

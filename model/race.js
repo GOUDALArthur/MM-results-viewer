@@ -18,8 +18,21 @@ export default class Race {
         return Object.values(this.results).find(result => result.driver === driver) || null;
     }
 
-    addResult(position, driver, team, points, time) {
-        this.results[position] = new Result(position, driver, team, points, time);
+    addResult(position, driver, team, points, time, isEndurance = false) {
+        let index = position;
+        if (isEndurance && this.results[index] !== undefined) index = Object.keys(this.results).length + 1;
+        this.results[index] = new Result(position, driver, team, points, time);
+    }
+
+    hasDriver(name) {
+        Object.values(this.results).forEach(result => {
+            if (result.driver === name) return true;
+        });
+        return false;
+    }
+
+    isDriverAtPosition(position) {
+        return this.results[position] !== undefined;
     }
 
 }

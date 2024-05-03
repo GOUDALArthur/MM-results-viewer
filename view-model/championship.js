@@ -26,6 +26,10 @@ export default class ChampionshipViewModel {
         this.championship.addRender(name, render);
     }
 
+    convertRenderToEndurance(teamName) {
+        this.championship.convertRenderToEndurance(teamName);
+    }
+
     insertClass(name, team, details = null) {
         this.championship.insertClass(name, team, details);
     }

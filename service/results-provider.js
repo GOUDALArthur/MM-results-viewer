@@ -16,16 +16,18 @@ export default class ResultsProvider {
                         step: function(result) {
                             const row = result.data;
                             const year = row.date.substring(0, 4);
-                            const id = year + row.category;
+                            const id = year + row.series;
                             if (!ResultsProvider.data[id]) {
-                                ResultsProvider.data[id] = new Season(year, row.category);
+                                ResultsProvider.data[id] = new Season(year, row.series);
                             }
                             const season = ResultsProvider.data[id];
                             if (!season.races[row.date]) {
                                 season.addRace(row.gp, row.date, row.track, row.layout);
                             }
                             const race = season.races[row.date];
-                            race.addResult(row.position, row.driver, row.team, row.points, row.details);
+
+                            if (season.isEndurance()) race.addResult(row.position, row.driver, row.team, row.points, row.details, true);
+                            else race.addResult(row.position, row.driver, row.team, row.points, row.details);
                         },
                         complete: function() {
                             resolve();
@@ -42,8 +44,8 @@ export default class ResultsProvider {
         });
     }
 
-    static getSeason(year, category) {
-        return ResultsProvider.data[year + category];
+    static getSeason(year, series) {
+        return ResultsProvider.data[year + series];
     }
 
     static getYears() {
@@ -57,9 +59,20 @@ export default class ResultsProvider {
     static getCategories() {
         let res = [];
         Object.values(ResultsProvider.data).forEach(season => {
-            res.push(season.category);
+            res.push(season.series);
         });
         return res;
+    }
+
+    static getDriverSeasons(driver) {
+        let res = {};
+        Object.values(ResultsProvider.data).forEach(season => {
+            if (!res[season.year] || res[season.year] === 'reserve') {
+                if (season.hasDriver(driver)) {
+                    res[season.year] = season;
+                }
+            }
+        });
     }
 
 }

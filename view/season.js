@@ -17,7 +17,7 @@ export default class Season {
             }
         }
 
-        return `<section class="category">
+        return `<section class="series">
             ${render}
         </section>`;
     }

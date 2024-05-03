@@ -25,6 +25,14 @@ export default class Championship {
         result.render += render;
     }
 
+    convertRenderToEndurance(teamName) {
+        const result = this.getResult(teamName);
+        let lines = result.render.split('</tr>');
+        result.render = lines[0] + '</tr>' + lines[lines.length - 2] + '</tr>';
+        const drivers = this.results.filter(result => result.team === teamName);
+        result.points = drivers[0].points + drivers[5].points;
+    }
+
     insertClass(name, team, details = null) {
         const result = this.getResult(name);
         result.team = team;
