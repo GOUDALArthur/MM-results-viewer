@@ -10,6 +10,12 @@
     color: #ebc340;
 }
 
+.championship .bennett-grand-prix,
+.championship .bennett-grand-prix a {
+    background-color: #685b9f;
+    color: #c0bcb7;
+}
+
 .championship .boa-esperança,
 .championship .boa-esperança a {
     background-color: #e09515;
@@ -26,6 +32,12 @@
 .championship .crs-formula-racing-group a {
     background-color: #9d0060;
     color: #ffbc9a;
+}
+
+.championship .dogtooth-lake-motor-group,
+.championship .dogtooth-lake-motor-group a {
+    background-color: #7eccff;
+    color: #4285b1;
 }
 
 .championship .dragon-race-team-china,
@@ -64,10 +76,28 @@
     color: #ffff51;
 }
 
+.championship .frost-racing-group,
+.championship .frost-racing-group a {
+    background-color: #f7f7f7;
+    color: #4279c3;
+}
+
 .championship .garuda-racing,
 .championship .garuda-racing a {
     background-color: #e86f32;
     color: #737373;
+}
+
+.championship .grand-slam-autosport,
+.championship .grand-slam-autosport a {
+    background-color: #c96c5b;
+    color: #fff9ef;
+}
+
+.championship .hammer-amr,
+.championship .hammer-amr a {
+    background-color: #a24984;
+    color: #3b4353;
 }
 
 .championship .johnson-racing-team,
@@ -94,6 +124,12 @@
     color: #007dbf;
 }
 
+.championship .lockhart-motorsport,
+.championship .lockhart-motorsport a {
+    background-color: #e99932;
+    color: #302f2d;
+}
+
 .championship .lucatelli-racing,
 .championship .lucatelli-racing a {
     background-color: #262a31;
@@ -112,6 +148,18 @@
     color: #816909;
 }
 
+.championship .magyar-engineering,
+.championship .magyar-engineering a {
+    background-color: #33353b;
+    color: #639349;
+}
+
+.championship .marshall-gt,
+.championship .marshall-gt a {
+    background-color: #404ea1;
+    color: #c79dab;
+}
+
 .championship .motor-works-performance,
 .championship .motor-works-performance a {
     background-color: #078d8c;
@@ -124,10 +172,52 @@
     color: #160a0b;
 }
 
+.championship .nakata-performance,
+.championship .nakata-performance a {
+    background-color: #bb2160;
+    color: #ededef;
+}
+
+.championship .nicholson-racing,
+.championship .nicholson-racing a {
+    background-color: #f4f4f5;
+    color: #e72829;
+}
+
+.championship .oakham-mrt,
+.championship .oakham-mrt a {
+    background-color: #4773ab;
+    color: #f5d415;
+}
+
+.championship .oberhof-racing-team,
+.championship .oberhof-racing-team a {
+    background-color: #29a98c;
+    color: #2a2b2c;
+}
+
 .championship .octane-racing,
 .championship .octane-racing a {
     background-color: #b5aa39;
     color: #272a31;
+}
+
+.championship .oranje-gt,
+.championship .oranje-gt a {
+    background-color: #e14d31;
+    color: #383b47;
+}
+
+.championship .orléans-amr,
+.championship .orléans-amr a {
+    background-color: #947531;
+    color: #2e2e2f;
+}
+
+.championship .otsuno-racing,
+.championship .otsuno-racing a {
+    background-color: #2d2d2d;
+    color: #9d9c49;
 }
 
 .championship .ozu-motor-team,
@@ -184,10 +274,28 @@
     color: #fcfcfc;
 }
 
+.championship .skanström-gt,
+.championship .skanström-gt a {
+    background-color: #f6f4f1;
+    color: #e7c805;
+}
+
+.championship .spartan-mrt,
+.championship .spartan-mrt a {
+    background-color: #9f7a2e;
+    color: #9f1d3f;
+}
+
 .championship .steel-angel-autosport,
 .championship .steel-angel-autosport a {
     background-color: #ec489d;
     color: #0ca8e8;
+}
+
+.championship .steiner-mrt,
+.championship .steiner-mrt a {
+    background-color: #832238;
+    color: #bbcccc;
 }
 
 .championship .steinmann-motorsport,
@@ -202,10 +310,28 @@
     color: #c71a34;
 }
 
+.championship .team-nordhagen,
+.championship .team-nordhagen a {
+    background-color: #47aa81;
+    color: #3d3a48;
+}
+
 .championship .thornton-motorsport,
 .championship .thornton-motorsport a {
     background-color: #2d7035;
     color: #cead5d;
+}
+
+.championship .toruń-gt,
+.championship .toruń-gt a {
+    background-color: #d8d9d9;
+    color: #2f2e2e;
+}
+
+.championship .tropica-racing-tech,
+.championship .tropica-racing-tech a {
+    background-color: #d0a31e;
+    color: #bf1422;
 }
 
 .championship .van-dort-racing,
@@ -226,6 +352,12 @@
     color: #11121b;
 }
 
+.championship .vittorio-corsa,
+.championship .vittorio-corsa a {
+    background-color: #e7e7e7;
+    color: #218d52;
+}
+
 .championship .windsor-racing,
 .championship .windsor-racing a {
     background-color: #fafafa;
@@ -236,6 +368,18 @@
 .championship .wirleich-bonniel-team a {
     background-color: #fafafa;
     color: #b40000;
+}
+
+.championship .wolfhagen-racing,
+.championship .wolfhagen-racing a {
+    background-color: #848584;
+    color: #2d2d2d;
+}
+
+.championship .yuma-race-team,
+.championship .yuma-race-team a {
+    background-color: #eaebee;
+    color: #8f549c;
 }
 
 .championship .zampelli-engineering,
