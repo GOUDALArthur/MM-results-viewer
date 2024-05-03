@@ -16,6 +16,12 @@
     color: #c0bcb7;
 }
 
+.championship .bexbach-sport,
+.championship .bexbach-sport a {
+    background-color: #efde31;
+    color: #100808;
+}
+
 .championship .boa-esperança,
 .championship .boa-esperança a {
     background-color: #e09515;
@@ -50,6 +56,12 @@
 .championship .eastwood-motorsport a {
     background-color: #a5b263;
     color: #3f8958;
+}
+
+.championship .équipe-milesse,
+.championship .équipe-milesse a {
+    background-color: #de9d23;
+    color: #fcfcfc;
 }
 
 .championship .empress-autosport,
@@ -106,6 +118,12 @@
     color: #156485;
 }
 
+.championship .kandersteg-ep,
+.championship .kandersteg-ep a {
+    background-color: #aad039;
+    color: #000000;
+}
+
 .championship .kitano-sport,
 .championship .kitano-sport a {
     background-color: #c6c7c6;
@@ -122,6 +140,24 @@
 .championship .lagro-banco-motorsport a {
     background-color: #f9db13;
     color: #007dbf;
+}
+
+.championship .lampang-endurance,
+.championship .lampang-endurance a {
+    background-color: #1f1f1f;
+    color: #b592b4;
+}
+
+.championship .lancaster-performance,
+.championship .lancaster-performance a {
+    background-color: #0bb594;
+    color: #f0f0f0;
+}
+
+.championship .le-roux-compétition,
+.championship .le-roux-compétition a {
+    background-color: #3993c8;
+    color: #f7f7f7;
 }
 
 .championship .lockhart-motorsport,
@@ -158,6 +194,12 @@
 .championship .marshall-gt a {
     background-color: #404ea1;
     color: #c79dab;
+}
+
+.championship .montpellier-motorsport,
+.championship .montpellier-motorsport a {
+    background-color: #70b9cb;
+    color: #5262a7;
 }
 
 .championship .motor-works-performance,
@@ -226,6 +268,12 @@
     color: #eeeeee;
 }
 
+.championship .pamplona-racing,
+.championship .pamplona-racing a {
+    background-color: #d81d36;
+    color: #fdb22c;
+}
+
 .championship .panther-race-team,
 .championship .panther-race-team a {
     background-color: #89598c;
@@ -256,6 +304,18 @@
     color: #bb5114;
 }
 
+.championship .russian-oil-racing,
+.championship .russian-oil-racing a {
+    background-color: #e43a39;
+    color: #f7f7f7;
+}
+
+.championship .sangju-tigers,
+.championship .sangju-tigers a {
+    background-color: #f4821e;
+    color: #1a1a1a;
+}
+
 .championship .scuderia-pergusa,
 .championship .scuderia-pergusa a {
     background-color: #ead369;
@@ -266,6 +326,12 @@
 .championship .scuderia-rossini a {
     background-color: #ff342a;
     color: #211514;
+}
+
+.championship .shimizu-boom,
+.championship .shimizu-boom a {
+    background-color: #55a1d0;
+    color: #dc1f37;
 }
 
 .championship .silva-racing,
@@ -320,6 +386,12 @@
 .championship .thornton-motorsport a {
     background-color: #2d7035;
     color: #cead5d;
+}
+
+.championship .tony-zang-motorsport,
+.championship .tony-zang-motorsport a {
+    background-color: #e5952d;
+    color: #f7f7f7;
 }
 
 .championship .toruń-gt,
